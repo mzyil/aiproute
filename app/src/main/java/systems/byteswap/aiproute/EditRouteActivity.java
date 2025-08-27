@@ -1,4 +1,20 @@
-package systems.byteswap.aiproute;
+pacimport androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Patterns;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;swap.aiproute;
 
 
 import android.app.DialogFragment;
@@ -11,7 +27,7 @@ import android.database.Cursor;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.MenuItem;
@@ -198,7 +214,7 @@ public class EditRouteActivity extends AppCompatActivity implements SelectSSIDDi
     }
 
     public void selectSSID(View view) {
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         ssidSelectFragment = new SelectSSIDDialogFragment();
         ssidSelectFragment.setSsidList((ArrayList<String>) ssidArray, (ArrayList<Boolean>) activeArray);
